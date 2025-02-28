@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;         
+            flex-direction: column;
+            width: 800px;
+            margin: 0 auto;
+            border: 2px solid black;
+            align-items: right;
+        }
+        label{
+            margin-bottom: 5px;
+            font-weight: bold;
+            align-items: left;
+        }
+        input[type="text"],input[type="email"],input[type="password"],input[type="tel"],input[type="number"],textarea,select
+        {
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            display: inline-flexbox;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="first name">First name:<input type="text" name="user" id="first name" placeholder="first name"
+                maxlength="30" minlength="4" pattern="[A-Za-z]{}1,30"></label><br>
+        <label for="last name">Last name:<input type="text" name="user" id="last name" placeholder="last name"
+                maxlength="30" minlength="1" pattern="[a-zA-Z]{1,30}"></label><br>
+        <label for="DOB">Date of birth: <input type="date" name="DOB"></label><br>
+        <label for="Mobile">Mobile Number: <input type="tel" name="mobile" placeholder="mobile number" maxlength="12"
+                minlength="10" pattern="{0-9}"></label><br>
+        <label for="gender">Gender: <input type="radio" name="gender" id="gender" value="male">male <input type="radio"
+                name="gender" id="gender" value="female">female</label><br>
+        <label for="address">address: <br> <textarea name="ADRESS" id="address" rows="8" cols="30"
+                maxlength="100"></textarea></label><br>
+        <label for="city">City: <input type="text" name="city" id="city" placeholder="city"></label><br>
+        <label for="pincode">Pincode: <input type="number" name="pincode" id="pincode" placeholder="pincode"
+                minlength="6" maxlength="6"></label><br>
+        <label for="state">State: <input type="text" name="state" id="state" placeholder="state"></label><br>
+        <label for="country">country: <input type="text" name="country" id="country" placeholder="country"></label><br>
+        Hobbies: <input type="checkbox" name="hobbies1">mobile gaming
+        <input type="checkbox" name="hobbies2" value="dancing">dancing
+        <input type="checkbox" name="hobbies3" value="pc gaming">pc gaming
+        <input type="checkbox" name="hobbies4" value="hockey">hockey
+        <input type="checkbox">others <input type="text"><br>
+        Qulification: <table border="1">
+            <tr>
+                <th>sl.no</th>
+                <th>examination</th>
+                <th>board</th>
+                <th>percentage</th>
+                <th>year passing</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>class X</th>
+                <td><input type="text" name="class X board" value="class X board"></td>
+                <td><input type="number" name="class X percentage" value="class X percentage"></td>
+                <td><input type="number" name="class X year of passing" value="class X year of passing"></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>class XII</th>
+                <td><input type="text" name="class XII board" value="class XII board"></td>
+                </td>
+                <td><input type="number" name="class XII percentage" value="class XII percentage"></td>
+                <td><input type="number" name="class XII year of passing" value="class XII year of passing"></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>graduation</th>
+                <td><input type="text" name="graduation board" value="graduation board"></td>
+                <td><input type="number" name="graduation percentage" value="graduation percentage"></td>
+                <td><input type="number" name="graduation year of passing" value="graduation year of passing"></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <th>master</th>
+                <td><input type="text" name="master board" value="master board"></td>
+                <td><input type="number" name="master percentage" value="master percentage"></td>
+                <td><input type="number" name="master year of passing" value="master year of passing"></td>
+            </tr>
+        </table>
+        <label for="caf"></label> <input type="radio" name="courses applied for" id="caf" value="bba">bba
+        <input type="radio" name="courses applied for" value="b.com">b.com
+        <input type="radio" name="courses applied for" id="caf" value="b.sc">b.sc
+        <input type="radio" name="courses applied for" id="caf" value="b.a">b.a <br>
+        <label for="cities">select the country</label>
+        <input list="city" name="city" id="cities" placeholder="select the country">
+        <datalist id="city">
+            <option value="new york"></option>
+            <option value="france"></option>
+            <option value="japan"></option>
+        </datalist><br>
+        
+        <output name="result" for="a b"></output><br>
+        <input type="submit"><input type="reset">
+    </form>
+</body>
+
+</html>

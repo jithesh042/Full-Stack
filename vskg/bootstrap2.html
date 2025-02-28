@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="visually-hidden">
+            <!-- alerts -->
+    <div class="alert alert-sucess">alert content</div>
+    <!-- badge -->
+    <h2>Monsters<span class="badge text-bg-secondary">50</span></h2>
+    <button class="btn btn-warning"> E-mail <span class="badge rounded-pill text-bg-secondary">2</span></button>
+    <!-- breadcrumbs -->
+    <div class="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">home</a></li>
+            <li class="breadcrumb-item"><a href="">library</a></li>
+            <li class="breadcrumb-item"><a href="">data</a></li>
+        </ol>
+    </div>
+    <!-- modal -->
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">modal</button>
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">add to cart</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit ipsam earum
+                        dolores ducimus nesciunt voluptas voluptate nostrum necessitatibus provident, similique cum
+                        saepe
+                        fugiat placeat voluptatum distinctio minus porro tenetur cumque!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                    <button type="button" class="btn btn-danger">save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- table -->
+    <!-- <div class="table-responsive">
+        <table class="table table-striped table-borderd table-hover table-success">
+            <tr>
+                <th>day</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>mon</th>
+                <td>commerce</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+            </tr>
+            <tr>
+                <th>tue</th>
+                <td>commerce</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+            </tr>
+            <tr>
+                <th>wed</th>
+                <td>commerce</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+            </tr>
+            <tr>
+                <th>thu</th>
+                <td>commerce</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+            </tr>
+            <tr>
+                <th>fri</th>
+                <td>commerce</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+                <td>accountancy</td>
+                <td>maths</td>
+                <td>tax</td>
+                <td>c++</td>
+            </tr>
+        </table>
+    </div> -->
+    <!-- progress -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 40%;"></div>
+    </div>
+    <!-- pagination -->
+    <ul class="pagination">
+        <li class="page-item"><a href="" class="page-link">previous</a></li>
+        <li class="page-item"><a href="" class="page-link">1</a></li>
+        <li class="page-item"><a href="" class="page-link">2</a></li>
+        <li class="page-item"><a href="" class="page-link">next</a></li>
+    </ul>
+    <!-- tool tip -->
+    <button type="button" class="btn btn-info" data-bs-toggle="tooltip" title="hi"
+        data-bs-placement="top">hover</button>
+    <!-- popover -->
+    <button type="button" class="btn btn-warning" data-bs-toggle="popover" title="hello" data-bs-content="introduction">
+        button</button>
+    <!-- toast -->
+    <!-- <div class="toast show">
+        <div class="toast-header">
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            It a game about entering the dungeon with minimum 100 floors. A dungeon is a dark, underground prison or
+            cell,
+            usually in a castle. Dungeons are often associated
+            with medieval castles, but their association with torture may come from the Renaissance period.
+        </div>
+    </div> -->
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title">why pink</h2>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis asperiores officia explicabo praesentium,
+                sed laboriosam iusto, nostrum modi quia, voluptatibus quos numquam non id nemo earum ipsum voluptate
+                eveniet magni.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, fuga deleniti, ut suscipit illo maiores
+                fugit dolorum ipsam id dolorem, libero nam ipsum explicabo perferendis quibusdam doloribus ducimus.
+                Aliquid, doloremque!
+            </p>
+            <button type="button" class="btn btn-warning">button</button>
+        </div>
+    </div>
+    <button class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#demo"></button>
+    form
+    <form method="get" class="p-5">
+        <fieldset>
+            <legend>form</legend>
+        </fieldset>
+        <label for="first name" class="form-lable">First name:<input class="form-control" type="text" name="user"
+                id="first name" placeholder="first name" maxlength="30" minlength="4"
+                pattern="[A-Za-z]{}1,30"></label><br>
+        <label for="last name">Last name:<input type="text" name="user" id="last name" placeholder="last name"
+                maxlength="30" minlength="1" pattern="[a-zA-Z]{1,30}"></label><br>
+        <label for="DOB">Date of birth: <input type="date" name="DOB"></label><br>
+        <label for="Mobile">Mobile Number: <input type="tel" name="mobile" placeholder="mobile number" maxlength="12"
+                minlength="10" pattern="{0-9}"></label><br>
+        <label for="gender" class="form-check-lable">Gender: <input class="form-check-input" type="radio" name="gender"
+                id="gender" value="male">male <input type="radio" name="gender" id="gender" value="female"
+                class="form-check-input">female</label><br>
+        <label for="address">address: <br> <textarea class="form-control-plaintext form-control-sm" name="ADRESS"
+                id="address" rows="8" cols="30" maxlength="100"></textarea></label><br>
+        <label for="city">City: <input type="text" name="city" id="city" placeholder="city"></label><br>
+        <label for="pincode">Pincode: <input type="number" name="pincode" id="pincode" placeholder="pincode"
+                minlength="6" maxlength="6"></label><br>
+        <label for="state">State: <input type="text" name="state" id="state" placeholder="state"></label><br>
+        <label for="country">country: <input type="text" name="country" id="country" placeholder="country"></label><br>
+        Hobbies: <input type="checkbox" name="hobbies1">mobile gaming
+        <input type="checkbox" name="hobbies2" value="dancing">dancing
+        <input type="checkbox" name="hobbies3" value="pc gaming">pc gaming
+        <input type="checkbox" name="hobbies4" value="hockey">hockey
+        <input type="checkbox">others <input type="text"><br>
+        <input type="color" value="color" class="form-control form-control-color"><br>
+        <input type="radio" name="" id="">
+        <input type="reset">
+        <input type="submit" value="submit"><br>
+    
+    <div class="form-check form-switch">
+        <label for="form-check-lable" for="switch">mode</label>
+        <input type="checkbox" class="form-check-input" id="switch" name="mode" value="yes" checked>
+    </div>
+</form>
+    <form style="padding: 50px;width: 500px;">
+        <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="username">
+        </div>
+        <div class="input-group">
+            <input type="email" class="form-control" placeholder="E-mail">
+            <span class="input-group-text">@gmail</span>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="search">
+            <button type="submit" class="btn btn-danger">search</button>
+        </div>
+        <div class="form-floating  mb-3">
+            <input type="text" class="form-control" name="user" id="name" >
+            <label for="name" class="form-check-lable">username</label>
+        </div>
+    </form>
+</div>
+    <div class="bg-danger clearfix">
+        <button type="button" class="btn btn-info float-start">float left</button>
+        <button type="button" class="btn btn-info float-end">float right</button>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

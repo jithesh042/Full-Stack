@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 250px;
+            background-color: yellow;
+            animation-name: hello;
+            position: relative;
+            animation-duration: 5s;
+            animation-delay: 2s;
+            animation-iteration-count: 1;
+            /* animation-direction: reverse; */
+            /* animation-fill-mode:forwards ; */
+            /* animation-play-state: ; */
+        }
+        @keyframes hello{
+            /* from{
+                background-color: firebrick;
+                height: 600px;
+                width: 600px;
+            }
+            to{
+                background-color:gold ;
+                height: 550px;
+                width: 550px;
+            } */
+             0%{
+                background-color: maroon;
+                left: 0px;
+                top: 200px;
+            }
+             20%{
+                background-color: lawngreen;
+                left:200px;
+                top:0px;
+            }
+             40%{
+                background-color: khaki;
+                left: 300px;
+                top: 200px;
+            }
+             60%{
+                background-color: rosybrown;
+                left: 150px;
+                top: 400px;
+            }        
+             80%{
+                background-color: brown;
+                left: 00px;
+                top: 100px;
+             }    
+             100%{
+                /* background-color: brown; */
+                background-image: url(/images/download\ \(2\).jpg);
+                left:0px;
+                top: 0px;
+                height: 170px;
+                width: 197px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

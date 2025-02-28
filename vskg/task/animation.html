@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 720px;
+            width: 1500px;
+            background-color: black;
+        }
+        .box{
+            height: 150px;
+            width: 150px;
+            background-color: burlywood;
+            animation-name: main;
+            position: relative;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            transform: skew(20deg);
+            animation-direction: alternate-reverse;
+        }
+        @keyframes main{
+            0% {
+                left: 200px;
+                top: 200px;
+            }
+            100%{
+                left: 500px;
+                top: 500px;           
+        }}
+
+    </style>
+</head>
+<body>
+    <div><div class="box"></div>
+
+    </div>
+</body>
+</html>

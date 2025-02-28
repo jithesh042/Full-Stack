@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+
+            margin: 10px;
+            background-color: brown;
+        }
+
+        button:hover {
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 1s;
+            transition-timing-function: ease-in;
+            background-color: blue;
+        }
+
+        img:hover {
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 1s;
+            transform: scale(2, 2);
+        }
+
+        .rotate {
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: blueviolet;
+        }
+
+        .rotate:hover {
+            transition-property: all;
+            transition-duration: 2s;
+            transition-delay: 1s;
+            transform: rotate(360deg);
+        }
+
+        .ball {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            background-color: brown;
+            animation-name: tall;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: 2;
+        }
+
+        @keyframes tall {
+            0% {
+                left: 0px;
+                top: 300px;
+            }
+
+            100% {
+                left: 0px;
+                top: 500px;
+            }
+        }
+
+        input[placeholder] {
+            background-color: aqua;
+        }
+
+        input[type="radio"] {
+            font-size: large;
+            background-color: aquamarine;
+            color: chartreuse;
+        }
+
+        input[type="checkbox"] {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>sumit</button><br>
+    <img src="/images/download.jpg" alt=""><br>
+    <div class="rotate"></div><br>
+    <div class="ball"></div>
+    <form>
+        <label for="text">username</label>
+        <input type="text" placeholder="user"><br>
+        Hobbies: <input type="checkbox" name="hobbies1">mobile gaming
+        <input type="checkbox" name="hobbies2" value="dancing">dancing
+        <input type="checkbox" name="hobbies3" value="pc gaming">pc gaming
+        <input type="checkbox" name="hobbies4" value="hockey">hockey
+        <input type="checkbox">others <input type="text"><br>
+        <label for="gender">Gender: <input type="radio" name="gender" id="gender" value="male">male <input type="radio"
+                name="gender" id="gender" value="female">female</label><br>
+                <input type="submit" value="sumit">
+                <input type="submit" value="cancel">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home{
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            border: 1px solid black;
+            border-radius: 5px;
+            
+            top: 10px;
+           left: 10px;           
+           background-color: black;
+        }
+        .home>div{
+            height:20px;
+            border: 5px solid burlywood;
+            background-color: burlywood;
+            margin-left: 25px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .box{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 120px 120px 120px;
+            row-gap: 20px;
+            column-gap: 5px;
+            background-color: darkgreen;
+            border: 5px solid blue;
+        }
+        .box>div{
+            border: 15px solid red;
+            padding: 5px;
+            margin: 25px;
+            align-items: center;
+        }
+        .green{
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="home">
+        <div><a href="">HOME</a></div>
+        <div><a href="">Contact us</a></div>
+        <div><a href="">Order</a></div>
+        </div>
+    </header>
+    <main class="mainbody">
+    <div class="box">
+        <div class="green">green</div>
+        <div>red</div>
+        <div>pink</div>
+        <div>blue</div>
+        <div>video </div>
+        <div>audio</div>
+        <div>image</div>
+        <div>background</div>
+        <div>color</div>
+        <div>games</div>
+        <div>green</div>
+        <div>red</div>
+        <div>pink</div>
+        <div>blue</div>
+        <div>video </div>
+        <div>audio</div>
+        <div>image</div>
+        <div>background</div>
+        <div>color</div>
+        <div>games</div>
+    </div>
+    </main>
+    <footer>
+        <div class="foot">
+        <div>123-456-789</div>
+        <div>coimbatore, india</div>
+        </div>
+    </footer>
+</body>
+</html>

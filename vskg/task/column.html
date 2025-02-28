@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            columns: 3;
+            column-gap: 25px;
+            column-rule-style: none;
+            column-rule-color: aqua;
+            column-rule-width: 3px;
+            width: 500px;
+        }
+
+        h1 {
+            column-span: all;
+        }
+
+        img {
+            opacity: 0.7;
+        }
+        .cat{
+            width: 500px;
+            height: 500px;
+            border: 2px solid red;
+        }
+       .cat>div {
+            height: 120px;
+            width: 120px;
+            position: absolute;
+            top: 20px;
+            /* opacity: 0.7; */
+        }
+
+        .cat>div:nth-child(1) {
+            left: 50px;
+            top: 50px;
+            background-color: aqua;
+            /* z-index: 3; */
+        }
+
+        .cat>div:nth-child(2) {
+            left: 70px;
+            top: 70px; 
+            background-color: brown;
+            /* z-index: 5; */
+        }
+
+        .cat>div:nth-child(3) {
+            left: 90px;
+            top: 90px;
+            background-color: red;
+            /* z-index: 1; */
+       }
+       .cat>div:nth-child(4) {
+            left: 110px;
+            top: 110px;
+            background-color: rebeccapurple;
+            /* z-index: 2; */
+       }
+       .cat>div:nth-child(5) {
+            left: 130px;
+            top: 130px;
+            background-color: chocolate;
+            /* z-index: 4; */
+       }
+        /* .at{
+            padding: 5px;
+            margin-right: 5px;
+            border: 2px solid brown;
+        }
+        #is{
+            padding: 5px;
+            margin-right: 5px;
+            border: 2px solid red;
+        }
+        p{
+            padding: 5px;
+            margin-right: 5px;
+            border: 2px solid gold !important;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="cat">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <div class="box">
+        <h1 style="background-color: white;">about AWA dungeon</h1>
+        <img src="/my project/image/download (2).jpg" alt="dungeon"><br>
+        <img src="/images/download.webp" alt="">
+        <p class="at">It a game about entering the dungeon with minimum 100 floors
+            A dungeon is a dark, underground prison or cell, usually in a castle. Dungeons are often associated
+            with medieval castles, but their association with torture may come from the Renaissance period.
+
+            The word dungeon, meaning “a dark usually underground prison,” comes from the French word donjon, which
+            also gives us our English word donjon, meaning “an inner tower in a castle.”Dungeon was first used in
+            English
+            in the 14th century for the strong tower in the inner part of the castle.
+            <!-- </p><p id="is"> -->
+
+            A "character unique in a game" refers to a playable character within a video game that stands out
+            significantly
+            from other characters due to their distinct appearance, abilities, personality, backstory, or gameplay
+            mechanics, essentially making them a unique and memorable part of the game experience.
+            <!-- </p><p> -->
+
+            A "character unique in a game" refers to a playable character within a video game that stands out
+            significantly from other characters due to their distinct appearance, abilities, personality, backstory,
+            or gameplay mechanics, essentially making them a unique and memorable part of the game experience.
+        </p>
+        <button>contact us</button>
+    </div>
+</body>
+
+</html>

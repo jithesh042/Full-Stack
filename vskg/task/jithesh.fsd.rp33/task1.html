@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head {
+            height: 45px;
+            width: 1500px;
+            background-color: black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .head>a {
+            text-decoration: none;
+            width: 100px;
+            text-align: center;
+            border: 5px solid white;
+            border-radius: 15px;
+            background-color: white;
+            font-size: large;
+        }
+
+        .head>a:hover {
+            /* width: 50px; */
+            background-color: aqua;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            border: 5px solid black;
+        }
+
+        button:hover {
+            background-color: aqua;
+        }
+
+        .project {
+            display: grid;
+            /* height: 500px;
+            width: 350px; */
+            grid-template-columns: 450px 450px 450px;
+            column-gap: 15px;
+            justify-content: center;
+        }
+
+        .project>div {
+            border: 5px solid black;
+            /* margin: 15px; */
+        }
+
+        .contact {
+            height: 160px;
+            width: 1500px;
+            background-color: black;
+            color: white;
+            padding-left: 50px;
+        }
+
+        .contact>div {
+            width: 300px;
+            border: 5px solid white;
+            text-align: center;
+            padding: auto;
+
+        }
+
+        img {
+            height: 200px;
+        }
+
+
+        @media (min-width: 100px) and (max-width: 600px) {
+            img,.project {
+                size-adjust: cover;
+            }
+
+            nav {
+                display: grid;
+                justify-content: stretch;
+                margin: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="head">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#pro">Project</a>
+                <a href="#con">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <div>
+                <figure>
+                    <p>Hi, I'm Jithesh from Coimbatore, and I recently completed my Bachelor's degree in B.Com (IT) from
+                        Sri
+                        Jayendra Saraswathi Maha Vidyalaya College of Arts and Science. During my studies, I developed a
+                        strong
+                        passion for working with computers and honed my skills in coding and design. I have acquired a
+                        solid
+                        foundation in HTML, C++, and Photoshop, and I thoroughly enjoy applying these skills in
+                        practical
+                        scenarios.
+                        Whether it's building websites or solving coding challenges, I love exploring new technologies
+                        and
+                        enhancing
+                        my problem-solving abilities.
+                    </p><br>
+                    <button class="hire">Hire me</button>
+                </figure>
+            </div>
+        </div>
+        <div class="project" id="pro">
+            <div><img src="/images/download (2).jpg" alt="dungeon">
+                <p>t a game about entering the dungeon with minimum 100 floors
+                    A dungeon is a dark, underground prison or cell, usually in a castle. Dungeons are often associated
+                    with medieval castles, but their association with torture may come from the Renaissance period.
+                </p>
+            </div>
+            <div><img src="/images/METAL.jpg" alt="metal">
+                <p>Metal, in a broad sense, refers to a class of materials that are typically hard, shiny, malleable,
+                    fusible, and ductile, with good electrical and thermal conductivity. Metals are an essential part of
+                    our daily lives and have been used by humans for thousands of years.</p>
+            </div>
+            <div><img src="/images/download (1).jpg" alt="wall">The Great Wall of China (traditional Chinese: 萬里長城;
+                simplified Chinese: 万里长城; pinyin: Wànlǐ Chángchéng, literally
+                "ten thousand li long wall") is a series of fortifications in China. They were built across the
+                historical
+                northern borders of ancient Chinese states and Imperial China as protection against various nomadic
+                groups from
+                the Eurasian Steppe.</div><br>
+        </div>
+    </main>
+    <footer class="contact">
+        <div id="con">
+
+            <h3>Jitheh h</h3>
+            <h3><a href="jithesh:jithujithesh2000@gmail.com">E-Mail</a></h3>
+            <h3><input type="text" placeholder="text area"></h3>
+
+        </div>
+    </footer>
+</body>
+
+</html>

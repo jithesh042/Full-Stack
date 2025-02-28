@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head {
+            height: 45px;
+            width: 1500px;
+            background-color: black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .head>a {
+            text-decoration: none;
+            width: 100px;
+            text-align: center;
+            border: 5px solid white;
+            border-radius: 15px;
+            background-color: white;
+            font-size: large;
+        }
+
+        .head>a:hover {
+            /* width: 50px; */
+            background-color: aqua;
+        }
+
+        img {
+            height: 150px;
+        }
+
+        .order {
+            display: flex;
+        }
+
+        .order>div {
+            height: 450px;
+            border: 5px solid black;
+            border-radius: 5px;
+            margin: 15px;
+            overflow: auto;
+        }
+
+        button {
+            font-size: 15px;
+            margin-left: 15px;
+        }
+        button:hover{
+            background-color: blue;
+
+        }
+
+        .review-form {
+            /* width: 400px; */
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .review-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .review-form input[type="text"],
+        .review-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .review-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .review-form button:hover {
+            background-color: #218838;
+        }
+        @media (min-width: 450px) and (max-width: 800px) {
+            .order{
+                display: flex;
+                flex-direction: row;
+                size-adjust: cover;
+            }
+            .order>div{
+                background-color: #218838;
+                size-adjust: cover;
+            }
+            nav {
+                display: flex;
+                size-adjust:cover;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="head">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Add to cart</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="order">
+            <div><img src="/my project/image/download.jpg" alt="iphone 16e">
+                <p>Apple announced the release of the iPhone 16e, the fourth edition of the company's less expensive
+                    smartphone line, on Wednesday after CEO Tim Cook teased the unveiling a week prior. The iPhone 16e
+                    features a larger screen, utilizes Face ID, features a USB-C charging ports and includes a
+                    48-megapixel rear camera.</p>
+                <h4>80000</h4>
+                <button>Add to cart</button>
+                <div class="review-form">
+                    <h4>Write a Review</h4>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="review">Review:</label>
+                        <textarea id="review" name="review" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <img src="/my project/image/images.jpg" alt="samsung Galaxy A55 5G">
+                <p>Samsung Galaxy A55 5G mobile was launched on 11th March 2024. The phone comes with a 120 Hz refresh
+                    rate 6.60-inch touchscreen display offering a resolution of 2340x1080 pixels (FHD+). It comes with
+                    8GB, 12GB of RAM. The Samsung Galaxy A55 5G runs Android 14 and is powered by a 5000mAh
+                    non-removable battery. </p>
+                <h4>50000</h4>
+                <button>Add to cart</button>
+                <div class="review-form">
+                    <h4>Write a Review</h4>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="review">Review:</label>
+                        <textarea id="review" name="review" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <img src="/my project/image/shopping.webp" alt="Acer Predator Helios Neo 16">
+                <p>While plenty of gaming laptops are available with the Nvidia GeForce RTX 4070 GPU, they don't offer
+                    features such as a 240Hz display, 14th Gen Intel Core i9 chipset, and a high TGP. The Acer Predator
+                    Helios Neo 16 is an excellent gaming laptop, especially if you're able to get it at a discounted
+                    rate.</p>
+                <h4>145000</h4>
+                <button>Add to cart</button>
+                <div class="review-form">
+                    <h4>Write a Review</h4>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="review">Review:</label>
+                        <textarea id="review" name="review" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <img src="/my project/image/images (1).jpg" alt="The ASUS ROG Strix G16">
+                <p>The ASUS ROG Strix G16 is a high-end gaming laptop. It offers exceptional performance, sporting an
+                    Intel Core i9 14900HX and NVIDIA RTX GPUs, up to a 4080. Its user experience is no less impressive.
+                    Its bright QHD+ display is responsive, and the keyboard and touchpad are great overall</p>
+                <h4>140000</h4>
+                <button>Add to cart</button>
+                <div class="review-form">
+                    <h4>Write a Review</h4>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="review">Review:</label>
+                        <textarea id="review" name="review" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

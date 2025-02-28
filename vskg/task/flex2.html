@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display: flex;
+            justify-content: space-between;
+        }
+        .flex>div{
+            color: white;
+            height: 25px;
+            width: 170px;
+            border: 2px solid blue;
+            background-color: blue;
+            text-align: center;
+        }
+        .box{
+            display:flex;
+            justify-content: stretch;
+        }
+        .box>div{
+            color: white;
+            background-color: blue;
+            border-radius: 8px;
+            height: 450px;
+            width: 450px;
+            margin: 5px;
+        }
+        .master .task{
+            height: 500px;
+            width:250px;
+            border: 5px solid black;
+              
+        }
+        .task{
+            display: flex;
+            height: 300px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content:space-between;
+            align-items: flex-end;
+        }
+        .task>div{
+            color: white;
+            background-color: blue;
+            height: 35px;
+            width: 60px;
+            border-radius: 5px;
+            border: 10px;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div>HOME</div>
+        <div>ABOUT US</div>
+        <div>OUR PRODUCT</div>
+        <div>CONTACT US</div>
+    </div><br>
+    <div class="box">
+
+        <div>i am small</div>
+        <div>i have more contentt than the very small items</div>
+        <div>It a game about entering the dungeon with minimum 100
+            floors.
+            A dungeon is a dark, underground prison or cell, usually in a castle</div>
+    </div><br>
+    <div class="master">
+    <div class="task">
+        <div>green</div>
+        <div>red</div>
+        <div>pink</div>
+        <div>blue</div>
+        <div>video </div>
+        <div>audio</div>
+        <div>image</div>
+        <div>background</div>
+        <div>color</div>
+        <div>games</div>
+    </div>
+    </div>
+    <br>
+    <div class="login">
+        <label for="e-mail">e-mail <input type="email" placeholder="enter"></label>
+    </div>
+</body>
+</html>
