@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 10%;
+            width: 20%;
+            padding: 10%;
+            color: white;
+            background-color:black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="alert('you have clicked a button')">click ME</button>
+    <button id="mybtn">click me</button>
+    <div id="box">hover ME</div>
+    <br><br><br>
+    <input type="text" placeholder="Enter the content" id="keyboard">
+    <p id="output"></p>
+    <script>
+        // document.getElementById('mybtn').addEventListener('click',function() {
+        //     alert("button has been click");
+        // });
+        // let hover=document.getElementById('box');
+        // hover.addEventListener('mouseover',function(){
+        //     hover.style.backgroundColor="blue";
+        //     hover.textContent="change color using hover "
+        // })
+        // hover.addEventListener('mouseout',function(){
+        //     hover.style.backgroundColor="red";
+        //     hover.textContent="change color using hover exit "
+        // })
+
+        // //keyboard events
+        let keybox=document.getElementById('keyboard');
+        let out=document.getElementById('output');
+        keybox.addEventListener('keypress',function(event){
+            out.textContent="you press:"+event.key;
+        })
+    </script>
+
+</body>
+
+</html>

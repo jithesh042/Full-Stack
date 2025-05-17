@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // regex
+        // variable name=/pattern/modifiers;---literal syntax
+        // "=new RegExp("pattern","modifiers");--regexp constr
+
+        // const pattern1=new RegExp("hello-world");
+        // const str="Hello hello";
+        // const pattern=/hello/i;
+        // console.log(str.match(pattern));
+
+        /*
+
+        [a-e] [abcde]
+        [0-9] 
+        .period
+        abcde
+        .a
+        ^caret
+        ^v
+        ^ab// check a word start with ab    
+        a$// check a work end with 
+        ma*n mn man mann //check the left side how many times it occurs and ma followed by n
+        ma+n one or more pattern occurns
+        {n,m} left least repeatetaion, right most repeatation--//any one ture
+        
+
+
+        */
+        const pattern = /cat/;
+        const text1 = "its is a cat";
+        const text = "price is 100 dollar.   ";
+        console.log(text.match(/\W+/));
+        const type="aaa aa abaaavaa";
+        console.log(type.match(/a{3,7}/g));
+        
+    </script>
+</body>
+
+</html>

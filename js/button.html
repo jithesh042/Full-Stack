@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="loop.js"></script> -->
+</head>
+
+<body>
+    <button onclick="alert('hello')">click me</button>
+    <!-- <script src="/js/button.js"> -->
+    <script>
+
+        // alert("welcome to javascript");
+
+        // switch
+        // let a = parseInt( prompt("enter the day"));
+        // switch (a) {
+        //     case 1:
+        //         console.log("sunday");
+        //         break;
+
+        //     case 2:
+        //         console.log("monday");
+        //         break;
+
+        //     case 3:
+        //         console.log("tuesday");
+        //         break;
+
+        //     case 4:
+        //         console.log("wednesday");
+        //         break;
+
+        //     case 5:
+        //         console.log("thrusday");
+        //         break;
+
+        //     case 6:
+        //         console.log("friday");
+        //         break;
+
+        //     case 7:
+        //         console.log("saturday");
+        //         break;
+
+        //     default:
+        //         console.log("invalid");
+        // }
+
+
+
+        // let a = Number(prompt("enter the number1"));
+        // let b = Number(prompt("enter the number2"));
+        // let c = prompt("enter the operator");
+        // let result;
+        // switch (c) {
+        //     case "+":
+        //         result = a + b;
+        //         console.log(`${a}+${b}=${result}`);
+        //         break;
+        //     case "-":
+        //         result = a - b;
+        //         console.log(`${a}-${b}=${result}`);
+        //         break;
+        //     case "*":
+        //         result = a * b;
+        //         console.log(`${a}*${b}=${result}`);
+        //         break;
+        //     case "/":
+        //         result = a / b;
+        //         console.log(`${a}/${b}=${result}`);
+        //         break;
+        //     case "%":
+        //         result = a % b;
+        //         console.log(`${a}%${b}=${result}`);
+        //         break;
+        //     default:
+        //         console.log("invalid");
+        // }
+
+        // let col = prompt("enter the color");
+        // switch (col) {
+        //     case "red":
+        //         console.log("red = stop");
+        //         break;
+        //     case "yellow":
+        //         console.log("yellow = ready");
+        //         break;
+        //     case "green":
+        //         console.log("green = go");
+        //         break;
+        //     default:
+        //         console.log("invalid");
+        // }
+        // let cOl;
+        // if(col=="red"){
+        //     cOl="red = stop";
+        //     console.log(cOl);
+        // }
+        // else if(col=="yellow"){
+        //     cOl="yellow = ready";
+        //     console.log(cOl);
+        // }
+        // else if(col=="green"){
+        //     cOl="green = go";
+        //     console.log(cOl);
+        // }   
+        // else{
+        //     console.log("invalid");
+        // }
+
+
+
+        // bit wise operator
+        // let a = 8;
+        // let b = 1;
+        // let c=-3;
+        // result = a >>> b;
+        // result = c >> b;
+        // console.log(result);
+
+        // 
+        // const a=9;
+        // console.log(typeof(a));
+
+        //function
+        // function Grade(name){
+        //     console.log(`hello ${name}`);
+        // } 
+        // Grade("sai");
+        // Grade("ram");
+
+        // function Add(a,b){
+        //     let total=a+b;
+        //     console.log(total);
+        // }
+        // Add(10,15);
+
+        // return
+        // function Square(a){
+        //     return a*a;
+        // }
+        // let red=Square(8);
+        // console.log(red);
+        // function Cube(){
+        //     console.log("my first function");
+        //     console.log("my second function");
+        //     return "my return function";
+        // }
+        // let message=Cube();
+        // console.log(message);
+
+        // function expression
+        // let Square = function (b) {
+        //     return b*b;
+        // }
+        // console.log(Square(prompt("enter the number")));
+
+        // gobal scope
+        var a = "hello";
+        function greet() {
+            console.log(`my var inner fun:${a}`);
+        }
+            greet();
+            console.log(`my var outer fun:${a}`);
+
+            function display_level(){
+                let lev="javascript";
+                if(true){
+                    let lev="block-level";
+                    console.log(`inner ${lev}`);
+                }
+                console.log(`outer ${lev}`);
+            }
+            display_level();
+
+
+
+    </script>
+</body>
+
+</html>

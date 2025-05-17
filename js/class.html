@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class person{
+        //     constructor(name,age){
+        //         this.name=name;
+        //         this,age=age;
+        //     }
+        //     greet(){
+        //         console.log(`hello my name is ${this.name} and my age is ${this.age}`);
+        //     }
+        // }
+        // const person1=new person("jithesh",25);
+        // person1.greet();
+
+
+        // class animal{
+        //     constructor(name){
+        //         this.name=name;
+        //     }
+        //     makesound(){
+        //         console.log(`${this.name} make a sound`);
+        //     }
+        // }
+        // class dog extends animal{
+        //     constructor(name,breed){
+        //         super(name);
+        //         this.breed=breed;
+        //     }
+        //     bark(){
+        //         super.makesound();
+        //         console.log(`${this.name} is a  ${this.breed} and bark`);
+        //     }
+        // }
+        // const mydog=new dog("mani","pug");
+        // mydog.makesound();
+        // mydog.bark();
+
+        // class person{
+        //     constructor(name){
+        //         this.name=name;
+        //     }
+        // }
+        // class employee extends person{
+        //     constructor(name,salary){
+        //         super(name);
+        //         this.salary=salary;
+        //     }
+        // }
+        // class manager extends employee{
+        //     constructor(name,salary,department){
+        //         super(name,salary);
+        //         this.department=department;
+        //     }
+        //     showdetails(){
+        //         console.log(`${this.name} earns ${this.salary} in this ${this.department}`);
+        //     }
+        // }
+        // let manager2=new manager("saran",90000,"software");
+        // manager2.showdetails();
+
+        /*polymorphism
+        // overridding
+        class fruit{
+            color(){
+                console.log("color of the fruit")
+            }
+        }
+        class mango extends fruit{
+            color(){
+                console.log("color of mango is yellow")
+            }
+        }
+        class apple extends fruit{
+            color(){
+                console.log("color of apple is red")
+            }
+        }
+        class dragon extends fruit{
+            color(){
+                console.log("color of dragonfruit is pink")
+            }
+        }
+        let fruits=[new mango(),new apple(),new dragon(),new fruit()];
+        // fruits.color()
+        fruits.forEach(fruit=>fruit.color());*/
+
+        class payment {
+            process(amount) {
+                console.log(`processing payment of ${amount}`);
+            }
+        }
+        class creditcardpayment extends payment {
+            process(amount) {
+                console.log(`processing credit card payment of ${amount}`);
+            }
+        }
+        class paypalpayment extends payment {
+            process(amount) {
+                console.log(`processing paypal payment of ${amount}`);
+            }
+        }
+        class cryptopayment extends payment {
+            process(amount) {
+                console.log(`processing crypto payment of ${amount}`);
+            }
+        }
+        function makepayment(paymentmethod, amount) {
+            paymentmethod.process(amount);
+        }
+        let creditcard = new creditcardpayment();
+        let paypal = new paypalpayment();
+        let crypto = new cryptopayment();
+        makepayment(creditcard, 100);
+        makepayment(paypal, 400);
+        makepayment(crypto, 200);
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

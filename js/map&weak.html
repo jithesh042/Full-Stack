@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mymap=new Map();
+        const myweakmap=new WeakMap();
+        // methods
+        // set(key,value)
+        mymap.set('name','jithesh');
+        mymap.set(1,'one');
+        console.log(mymap);
+        const userobj={id:1};
+        myweakmap.set(userobj,'jithu');
+        console.log(myweakmap);
+
+        // get(key)
+        console.log(mymap.get('name'));
+        // delete(key)
+        mymap.delete(1);
+        console.log(mymap);
+        // has(key)
+        console.log(mymap.has('name'));
+
+        
+
+    </script>
+</body>
+</html>

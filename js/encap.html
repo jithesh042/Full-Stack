@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let student = {
+            name: "ram",
+            age: 24,
+            course: "javascript",
+            getDetails: function () {
+                return `${this.name} is ${this.age} year old and studying ${this.course}`;
+            }
+        }
+        console.log(student.getDetails());
+
+        // function students(name,age,course){
+        //     let _name=name;
+        //     let _age=age;
+        //     let _course=course;
+        //     return {
+        //         getDetails:function(){
+        //         return `${_name} is ${_age} year old and studying ${_course}`;
+        //     }
+        //     }
+        // }
+        // let student1=students("ram",24,"Reactjs");
+        // console.log(student1.getDetails());
+        // console.log(student1._name);
+
+        class students {
+            constructor(name, age, course) {
+                this._name = name;
+                this._age = age;
+                this._course = course;
+            }
+            get name() {
+                return this._name;
+            }
+            get age(){
+                return this._age;
+            }
+            get course(){
+                return this._course
+            }
+            set name(newname) {
+                if (newname.length > 0) {
+                    this._name = newname;
+                }
+                else {
+                    console.log("no name");
+                }
+            }
+            set age(newage) {
+                if (newage > 0) {
+                    this._age = newage;
+                }
+                else {
+                    console.log("no age");
+                }
+            }
+            set course(newcourse) {
+                if (newcourse.length > 0) {
+                    this._course = newcourse;
+                }
+                else {
+                    console.log("no course");
+                }
+            }
+        }
+        let student2=new students("ram",24,"Reactjs");
+        console.log(student2);
+        
+        student2.name="sam"
+        student2.age=25;
+        student2.course="fsd";
+        console.log(student2)
+
+        student2.name="";
+        console.log(student2.name);
+        
+        class students1{
+            #name;
+            #age;
+            #course;
+            constructor(name, age, course) {
+                this.#name = name;
+                this.#age = age;
+                this.#course = course;
+            }
+            getname(){
+                return this.#name
+            }
+        }
+        let student3=new students1("leo",20,"java")
+        console.log(student3.getname());
+        console.log(student3.name);
+        
+
+    </script>
+</body>
+
+</html>

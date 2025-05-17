@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let mypromise = new Promise((resolve, reject) => {
+        //     let success = true;
+        //     // setTimeout(() => {
+        //         if (success) {
+        //             resolve("promise is successfulll");
+        //         }
+        //         else {
+        //             reject("error occurred");
+        //         }
+        //     // }, 3000);
+        // })
+        // console.log(mypromise);
+
+
+        /*function fetchdata(callback){
+            setTimeout(()=>{
+                console.log("data fetched");
+                callback();
+            },2000);
+        }
+        function processdata( callback){
+            setTimeout(()=>{
+                console.log("process fetched");
+                callback();
+            },1000);
+        }
+        fetchdata(()=>{
+            processdata(()=>{
+                console.log("task completed");
+            })
+        })*/
+
+        /*  function fetchData() {
+              return new Promise((resolve) => {
+                  setTimeout(() => {
+                      console.log("data fetched");
+                      resolve();
+                  }, 2000);
+              })
+          }
+          function processData() {
+              return new Promise((resolve) => {
+                  setTimeout(() => {
+                      console.log("process fetched");
+                      resolve();
+                  }, 1000);
+              })
+          }
+          fetchData()
+         .then(processData)
+         .then(() => (console.log("task completed")))
+         .catch ((error) => console.log("error occur", error));*/
+
+        function order(food, time) {
+            return new Promise((resolve, reject) => {
+                console.log(`order placed for ${food} is waiting for chef to prepare`)
+                setTimeout(() => {
+                    let success = Math.random() > 0.3
+                    if (success) {
+                        resolve(`your ${food} is ready !Enjoy`)
+                    }
+                    else {
+                        reject(`sorry your order is unavailable`);
+                    }
+                }, time);
+            })
+        }
+        // let a=prompt("enter the dish")
+        // Promise.all(
+        //     [order("briyani", 2000), order("Pizza", 1500), order("Fries", 15000), order("cake", 1000)])
+        //     .then(message => {
+        //         console.log("all the orders are ready", message);
+        //     })
+        //     .catch(error => {
+        //         console.error("one of the order failed", error);
+        //     })
+        //     .finally(() => {
+        //         console.log("thanks for visting us!!")
+        //     })
+
+        Promise.race([order("pasta", 3000), order("salad", 1500), order("soup", 2000)])
+            .then(result => {
+                console.log("First dish served", result);
+            })
+            .catch(error => {
+                console.log("no food was served", error)
+            })
+            .finally(() => {
+                console.log("thanks for visting us!!")
+            })
+            
+            
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            padding: 1%;
+        }
+
+        #child {
+            background-color: aqua;
+            padding: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <!-- <input type="text" placeholder="enter the name" id="name">
+        <button type="submit">submit</button>
+        <input type="text" placeholder="Enter the char" id="message">
+        <p>character count: <span id="charCount">0</span></p>
+        <div id="parent">
+            welcome
+            <button id="child" type="button">click ME</button> 
+        </div> -->
+        <button id="addbtn">add  button</button><button id="removebtn">remove</button>
+
+    </form>
+    <script>
+        // document.getElementById('form').addEventListener('submit',function(event){
+        //     event.preventDefault();
+        //     let name=document.getElementById('name').value.trim();
+        //     if(name===""){
+        //         alert("please enter the name");
+        //     }
+        //     else{
+        //         alert("Form submmited successsfully");
+        //     }
+        // });
+
+        // document.getElementById('message').addEventListener('input', function () {
+        //     let count = this.value.length;
+        //     document.getElementById('charCount').textContent = count;
+        // })
+
+        // windows
+
+        // window.addEventListener('load', function () {
+        //     console.log('page is loaded');
+        // })
+        // window.addEventListener('scroll', function () {
+        //     console.log('page is scroll');
+        // })
+
+        // event propagation
+
+        // document.getElementById('parent').addEventListener('click',function(){
+        //       console.log('parent clicked');
+        // })
+        // document.getElementById('child').addEventListener('click',function(){
+        //     console.log('child clicked');
+        //     event.stopPropagation();
+        // })
+
+        let btn=document.getElementById('addbtn')
+        function showalert(){
+            alert('button clicked')
+        }
+        btn.addEventListener('click',showalert)
+        document.getElementById('removebtn').addEventListener('click',function(){
+            btn,removeEventListener("click",showalert);
+            alert("Event listerner removed");
+        })
+    </script>
+</body>
+
+</html>

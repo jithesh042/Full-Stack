@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class car {
+            constructor(brand, model) {
+                this._brand = brand;
+                this._model = model;;
+            }
+            get brand() {
+               return this._brand
+            }
+            set brand(newbrand) {
+                if (newbrand.length > 0) {
+                    this._brand = newbrand
+                }
+                else {
+                    console.log("no brand name");
+                }
+            }
+
+            getdetail() {
+                return `${this._brand} ${this._model}`;
+            } 
+            display() {
+                console.log(`car is ${this.getdetail()}`);
+            }
+        }
+        const cars = new car("honda", "civic");
+        // cars.display();
+        // console.log(cars._brand);
+        cars.brand="BMW";
+        cars.display();
+    </script>
+</body>
+
+</html>

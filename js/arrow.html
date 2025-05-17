@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // arrow function
+        // const add =(a,b)=> a+b;
+        // // {
+        // //     console.log(a+b);
+        // // }
+        // const addnum=add(5,8);
+        // console.log(addnum);
+
+        // arrays
+        const num = [1, 25, 50, 75, 100];
+        // console.log(num[0]);
+        num.push(125, 150);
+        console.log(num);
+        num.unshift(-25, 0);
+        console.log(num);
+        // change value
+        num[3] = 55;
+        console.log(num);
+        // remove value
+        // let res=num.pop();
+        // console.log(res);
+        // let res = num.shift();
+        // console.log(num);
+
+        // splice
+        // num.splice(2,2);
+        // console.log(num);
+        // let num1 = num.splice(1, 3);
+        // console.log(num);
+        // let num2=num.slice(2,5);
+        // console.log(num2);
+        console.log(num.length);
+
+        var list = [2, 90, 150, 1, 100, 50, 55, 1523];
+        list.sort();
+        console.log(list);
+        var fruits = ["apple", "banana", "mango", "orange", "grapes"];
+        fruits.sort();
+        console.log(fruits);
+        // let newarr=num.concat(list);
+        // // console.log(newarr);
+        // for(let i=0;i<num.length;i++){
+        //     console.log(num[i]);
+        // }
+        // foreach
+        // const num4 = [1, 25, 50, 75, 100];
+        // function fun(ell) {
+        //     console.log(ell*ell);
+        // }
+        // num4.forEach(fun);
+
+        //function  arrayname.forEach(functionname(elenemt,index,array)){ }
+        // arrayname.forEach((element,index,array)=>{ })
+        let a = [12, 20, 25, 35, 40];
+        a.forEach(num5 => { console.log(num5 * 3) });
+
+        // map()
+        // let variablename=arrayname.map((element,index,array)=>{});
+        let b = a.map(elle => elle * 2);
+        console.log(b);
+        let c = a.filter(numr => numr % 2 == 0);
+        console.log(c);
+
+        // reduce
+        // let variablename=arrayname.reduce((accumulator,element,index,array)=>{});
+        // let sum = a.reduce((tol, add) =>  tol + add, 0);
+        // console.log(sum);
+
+        // find and findindex and some and every
+        // let sum = a.some((tol, add) =>  tol + add, 0);
+        // console.log(sum);
+
+        // includes()
+        console.log(a.includes(25));
+        console.log(a.includes(30));
+
+
+        a.reverse();
+        console.log(a);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // strings("",'',``(templates literals).)
+      // templates literals
+      let text = "javascript";
+      console.log(text.length);
+      console.log(text.toUpperCase());
+      console.log(text.toLowerCase());
+      console.log(text.charAt(2));
+      console.log(text.indexOf("script"));
+      console.log(text.lastIndexOf("python"));
+      console.log(text.slice(0, 5));
+      console.log(text.slice(-7));
+      console.log(text.substring(0, 4));
+      console.log(text.substr(4, 6));
+      let newtext = text.replace("java", "type");
+      console.log(newtext);
+      let str = " hello ";
+      console.log(str.trim());
+      console.log(str);
+      let news = "welcome to my world".split(" ");
+      console.log(news);
+      console.log(str.concat(" ", news));
+
+      // for of
+      for (let iT of text) {
+        console.log(iT);
+      }
+      console.log("apple" > "bannana");
+      console.log("apple" < "bannana");
+      console.log("A" > "a");
+      console.log("hello world".includes("world"));
+      console.log("hello world".startsWith("world"));
+      console.log("hello world".endsWith("world"));
+
+      let srt = "45";
+      console.log(Number(srt)); //method 1
+      console.log(parseInt(srt)); //method2
+      console.log(parseFloat(srt)); //method3
+
+          
+    </script>
+  </body>
+</html>

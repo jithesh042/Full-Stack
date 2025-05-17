@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"sara",
+        "email":"sara33@gmail.com",
+        "age":23
+    },
+    {
+        "id":2,
+        "name":"tamilarasu",
+        "email":"tamilarasu@gmail.com",
+        "age":21
+    },
+    {
+        "id":3,
+        "name":"tamil",
+        "email":"tamil51@gmail.com",
+        "age":27
+    },
+    {
+        "id":4,
+        "name":"jithesh",
+        "email":"jithesh@gmail.com",
+        "age":25
+    },
+    {
+        "id":5,
+        "name":"rose",
+        "email":"rose235@gmail.com",
+        "age":26
+    }
+]

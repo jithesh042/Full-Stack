@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>timer</h1>
+    <input type="number" placeholder="minutes" id="inputtime">
+    <button onclick="startTimer()">start</button>
+    <button onclick="pauseTimer()">pause</button>
+    <button onclick="resetTimer()">reset</button>
+    <div id="timer">00:00</div>
+
+
+    <script>
+        let countdown;
+        let timeleft;
+
+        const timeDisplay = document.getElementById('timer');
+        window.load = function () {                          //function expression
+            let savedTime = localStorage.getItem("countdown");
+            if (savedTime) {
+                let remaining = Math.floor((savedTime - Date.now()) / 1000);
+                if (remaining > 0) {
+                    startCountDown(remaining);
+                }
+            }
+        }
+        // start Timer
+        function startTimer() {
+            let minutes = document.getElementById('inputtime').value;
+            if (!minutes || minutes <= 0) return alert("fill the valid miinutes");
+
+            timeleft = minutes * 60;
+            let endTime = Date.now() + timeleft * 1000;
+            localStorage.setItem("countdownEnd", endTime);
+            startCountDown(timeleft)
+        }
+        // start countdown
+        function startCountDown(seconds) {
+            clearInterval(countdown);
+            countdown = setInterval(() => {
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    localStorage.removeItem("countdownEnd");
+                    timeDisplay.innerHTML = "Time's up!!";
+                }
+                else {
+                    localStorage.setItem("countdownEnd", Date.now() + seconds * 1000);
+                    displayTime(seconds);
+                    seconds--;
+                }
+            }
+                , 1000
+            );
+        }
+        // display time
+        function displayTime(seconds) {
+            let minutes = Math.floor(seconds / 60);
+            let secs = seconds % 60;
+            // functions:condition1?true:false
+            timeDisplay.innerHTML = `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+        }
+        function pauseTimer() {
+            clearInterval(countdown);
+            localStorage.setItem("pasuedTime", timeleft);
+        }
+        function resetTimer() {
+            clearInterval(countdown);
+            localStorage.removeItem("countdownEnd");
+            localStorage.removeItem("pausedTime");
+            timeDisplay.innerHTML = "00:00";
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque corporis possimus sed
+            harum, et placeat voluptatum, quasi rerum ducimus fuga praesentium soluta deleniti ullam voluptas nostrum
+            consectetur repudiandae itaque! Libero!</p>
+    </div>
+
+    <ul id="pancake">
+        <li class="first">1 cup all purpose flour</li>
+        <li>2 tablespoone sugar</li>
+        <li class="current">1 tablespoone baking power</li>
+        <li>1/2teaspoon salt</li>
+        <li>1 cup milk</li>
+        <li class="last">1 large egg</li> 
+    </ul>
+    <a href="www.google.com">google</a>
+
+
+
+    <script>
+        let note=document.querySelector(".para");
+        console.log(note.parentNode);
+        
+        // let menu=document.querySelector("#pancake");
+        // let firstchild=menu.firstChild.nodeName;
+        // console.log(firstchild)
+        let menu1=document.getElementById("pancake");
+        console.log(menu1.firstElementChild);
+        let menu=document.getElementById("pancake");
+        console.log(menu.lastElementChild);
+        let menu2=document.getElementById("pancake");
+        console.log(menu2.children)
+
+
+        let unorderlist=document.createElement("ul");
+        document.body.appendChild(unorderlist);
+        let list=document.createElement("li");
+        list.textContent="add";
+        unorderlist.appendChild(list);
+        let list1=document.createElement("li");
+        list1.textContent="remove";
+        unorderlist.appendChild(list1);
+        let list2=document.createElement("li");
+        list2.textContent="addition";
+        unorderlist.appendChild(list2);
+        let list3=document.createElement("li");
+        list3.textContent="super";
+        unorderlist.appendChild(list3);
+        let list4=document.createElement("li");
+        list4.textContent="paper";
+        unorderlist.appendChild(list4);
+        let list5=document.createElement("li");
+        list5.textContent="pen";
+        unorderlist.appendChild(list5);
+        let list6=document.createElement("li");
+        list6.textContent="scale";
+        unorderlist.appendChild(list6);
+        const link=document.querySelector('a');
+        // link.href="www.email.com";
+        link.setAttribute('href','www.bing.com ');
+        console.log(link.getAttribute('href'));
+        menu.removeChild(menu.children[2]);
+        
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

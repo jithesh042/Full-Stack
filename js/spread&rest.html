@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        // spread and rest(...)
+        // spread(...)
+        const arr1 = [3, 2, 5, 8];
+        const arr2 = [...arr1];
+        arr2.push(4);
+        console.log(arr1);
+        console.log(arr2);
+        const c = [...arr1, ...arr2];
+        console.log(c);
+        const a = {
+            name: "jithesh",
+            age: 25
+        }
+        const b = {
+            maths: 75,
+            english: 80
+        }
+        // const d={...a,...b};
+        // console.log(d);
+        const strin = "hello";
+        const letter = [...strin];
+        console.log(...strin);
+        console.log(letter);
+
+        function sum(d, e, f) {
+            return d + e + f;
+        }
+        const number = [1, 2, 3];
+        console.log(sum(...number));
+
+        // rest
+        function sum(...number) {
+            return number.reduce((total, num) => total + num, 0);
+        }
+
+        console.log(sum(1, 2, 3, 4, 5));
+
+        const [first, second, ...rest] = [1, 2, 3, 4, 5, 6];
+        console.log(first);
+        console.log(second);
+        console.log(rest);
+
+        // ternary operator
+        // conditon ? expression true : false expressiom
+        let age = 20;
+        let message;
+        if (age >= 18) {
+            message = "your an adult";
+        } else {
+            message = "your an minor";
+        }
+        console.log(message);
+        let message1 = (age >= 18) ? "your an adult" : "your an minor";
+        console.log(message1);
+        function check(number) {
+            return (number % 2 === 0) ? "even" : 'odd';
+        }
+        console.log(check(3));
+
+        let mark = 85;
+        let grade = (mark >= 90) ? "A" : (mark >= 80) ? "B" : (mark >= 70) ? "C" : (mark >= 60) ? "D" : "F";
+        console.log(grade);
+
+        // nullish(??)
+        let username = 0;
+        let displayname = username ?? 100;
+        console.log(displayname);
+
+    </script>
+</body>
+
+</html>

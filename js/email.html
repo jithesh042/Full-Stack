@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // email validation
+        function validemail(email){
+            let emailregex=/^[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailregex.test(email);
+        }
+        console.log(validemail("test@example.com"));
+        console.log(validemail("invalid-email"));
+        console.log(validemail("test@example"));
+        console.log(validemail("test@example.co.in"));
+        password=/^[a-zA-Z0-9.*$_-]{10,}$/
+        let p=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*+=!?]).{8,}$/
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // date
+        let currentdate=new Date();
+        console.log(currentdate);
+        let specdate=new Date(2023,11,25,10,30,0);
+        console.log(specdate);
+        let formate=new Date("2023-12-25T10:30:00");
+        console.log(formate);
+
+        // timestamp mmsecond jan 1,1970(UCT)
+        let stamp=new Date(1741905101200);
+        console.log(stamp);
+
+        // get date 
+        let newdate=new Date();
+        // console.log(newdate.getFullYear());
+        // console.log(newdate.getMonth());
+        // console.log(newdate.getDate());
+        // console.log(newdate.getDay())
+        // console.log(newdate.getHours());
+        // console.log(newdate.getMinutes());
+        // console.log(newdate.getSeconds());
+        // console.log(newdate.getMilliseconds());
+        // console.log(newdate.getTime());
+        // console.log(newdate.getUTCFullYear());
+        // console.log(newdate.getUTCMonth());
+        // console.log(newdate.getUTCDate());
+        // console.log(newdate.getUTCDay())
+        // console.log(newdate.getUTCHours());
+        // console.log(newdate.getUTCMinutes());
+        // console.log(newdate.getUTCSeconds());
+        // console.log(newdate.getUTCMilliseconds());
+
+        // set date
+        let newdate1=new Date()
+        newdate1.setFullYear(2025);
+        newdate1.setDate(15);
+        newdate1.setMonth(5);
+        newdate1.setHours(14);
+        newdate1.setMinutes(30);
+        newdate1.setSeconds(11);
+        // newdate1.setTime(5);
+        console.log(newdate1)
+        
+        // format
+        let datefor=new Date();
+        console.log(datefor.toString());
+        console.log(datefor.toDateString());
+        console.log(datefor.toTimeString());
+        console.log(datefor.toUTCString());
+        console.log(datefor.toLocaleString());
+        console.log(datefor.toLocaleTimeString());
+        console.log(datefor.toLocaleDateString());
+
+        const dat=new Date();
+        dat.setDate(dat.getDate()+5);
+        console.log(dat);
+
+        const vardat=new Date("2025-03-14");
+        const vardate=new Date("2025-03-01");
+        let diff=vardat-vardate;
+        console.log(diff);
+
+        let daydiff=vardat.getDate()-vardate.getDate();
+        console.log(daydiff);
+
+        // time stamp
+        let formate1=Date.parse("2023-12-25T10:30:00");
+        console.log(formate1);
+        
+        // time zone
+        console.log(new Date().getTimezoneOffset());
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

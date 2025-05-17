@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* table{
+            width: fit-content;
+            height: fit-content;
+        }
+        table,tr,th,td{
+            border: 2px solid;
+        } */
+    </style>
+</head>
+
+<body>
+    <h2>user Management</h2>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+    </table>
+    
+    <h3>Adding User</h3>
+    <input type="text" placeholder="Enter your name" id="name">
+    <input type="email" placeholder="Enter your email" id="email">
+    <input type="number" placeholder="Enter your name" id="age">
+    <button onclick="adduser()">Add User</button>
+    <script src="json.js"></script>
+</body>
+
+</html>

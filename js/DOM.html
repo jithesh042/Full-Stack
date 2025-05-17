@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="get1">First heading</h1>
+    <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe possimus voluptate consequatur
+        nesciunt cumque fugiat architecto, porro perferendis eveniet eligendi reiciendis asperiores, necessitatibus cum
+        pariatur optio illo? A, doloribus corporis!</p>
+    <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit eaque ad consequuntur
+        voluptate dolorem
+        velit perferendis nemo officiis et in esse iste libero sed, voluptates expedita reprehenderit maiores.
+        Excepturi.</p>
+    <div id="doc">
+        hello <span style="display: none;">welcome</span> my world
+    </div>
+    <img src="/images/download.jpg" id="chang">
+    <p id="remove">this paragraph will be romove</p>
+
+    <script>
+        let remov = document.getElementById("remove");
+        remov.remove();
+        console.log(remov);
+        let change=document.getElementById("chang");
+        change.src="../images/download (1).jpg";
+        
+
+        const heading = document.getElementById("get1");
+        console.log(heading.textContent);
+        const par = document.getElementsByClassName("para");
+        console.log(par[0]);
+        const tag = document.getElementsByTagName("p");
+        console.log(tag[1]);
+        const second = document.querySelector(".para1");
+        // second.style.backgroundImage="url(../images/download.jpg)";
+        second.style.padding = "50px"
+        console.log(second.textContent);
+        const first = document.querySelectorAll("p");
+        console.log(first.textContent);
+
+        // adding tag
+        let unorderlist = document.createElement("ul");
+        document.body.appendChild(unorderlist);
+
+        let listitem = document.createElement("li");
+        listitem.textContent = "goods";
+        unorderlist.appendChild(listitem);
+        let listitem1 = document.createElement("li");
+        listitem1.textContent = "and";
+        unorderlist.appendChild(listitem1);
+        let listitem2 = document.createElement("li");
+        listitem2.textContent = "service";
+        unorderlist.appendChild(listitem2);
+        let listitem3 = document.createElement("li");
+        listitem3.textContent = "awesome";
+        unorderlist.appendChild(listitem3);
+
+        let head = document.createElement("h1");
+        head.textContent = "adding h1 tag using script";
+        document.body.appendChild(head);
+
+        let content = document.getElementById("get1").innerHTML = "<i>my new content</i>";
+        console.log(content);
+        let hidde = document.getElementById("doc").innerText = "new ";
+        console.log(hidde)
+
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">sumit</button>
+    <p id="red">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel molestiae consectetur ex pariatur
+        repudiandae quisquam animi beatae ut iure. Fugit, odio dolore. Temporibus rem labore debitis neque, ipsa
+        eligendi quibusdam.</p>
+
+    <input type="text" name="" id="taskInput" placeholder="enter the task">
+    <button id="taskBtn" type="button">Add Task</button>
+    <ul id="taskList"></ul>
+
+
+
+
+    <script>
+        // const button = document.querySelector("#btn");
+        // function newText(event) {
+        //     const p = document.querySelector("#red");
+        //     p.innerText="this is a paragraph";
+        // }   
+        // button.addEventListener('click',newText);
+
+        // ToDo List
+        const task = document.getElementById('taskInput');
+        const task1 = document.getElementById('taskBtn');
+        const task2 = document.getElementById('taskList');
+        function addTask() {
+            const text = task.value.trim();
+            if (text === "") return;
+            // creating task
+            const li = document.createElement('li');
+            li.classList.add("task");
+            li.textContent = text;
+
+            // delete a task
+            const delete1 = document.createElement('span');
+            delete1.textContent = "X";
+            delete1.classList.add("delete-btn");
+
+            // append delete
+            li.appendChild(delete1);
+            task2.appendChild(li);
+
+            task.value = ""
+        }
+
+        task1.addEventListener('click', addTask);
+
+        task2.addEventListener('click', function (event) {
+            if (event.target.classList.contains("task")) {
+                event.target.classList.toggle("completed");
+            }
+            else if (event.target.classList.contains("delete-btn")) {
+                event.target.classList.remove();
+            }
+        })
+        // // //
+        
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let students = {
+        //     name: "john",
+        //     dept: "FSD",
+        //     rollno: 7
+        // }
+        // // console.log(students.dept);(or)
+        // console.log(students["name"]);
+        // students.name="alex";
+        // console.log(students.name);
+
+        // const person=new Object();
+        // person.name="emma";
+        // person.age=22;
+        // console.log(person);
+
+        // object methods
+        // const person = {
+        //     name: "emma",
+            // age: 22,
+            // greet: function () {
+            //     return "hello\t" + this.name;
+            // }
+        // }
+        // console.log(person.greet());
+        const person = {
+            name: "emma",
+            age: 22,
+            mark: {
+                maths: 90,
+                science: 80,
+                english: 70,
+                tamil: 85
+            }
+        }
+        person.sports = "hockey";
+        delete person.age;
+        // console.log(person);
+        console.log(Object.entries(person));
+
+        const tar = { a: 1 }
+        const src = { b: 2, c: 3 }
+        Object.assign(tar, src);//combine two objects
+        console.log(tar);
+
+        // freeze
+        const obj = {
+            name: "sara",
+        }
+        Object.freeze(obj);
+        obj.name = "emma";
+        console.log(obj);
+
+        // seal
+        const object = {
+            name: "sam",
+            age: 25,
+        }
+        Object.seal(object);//prevent adding or deleting properties but can change the value
+        object.age = 30;
+        delete object.name;
+        console.log(object);
+
+        // 
+        // const brand = {
+        //     name: "jithesh",
+        //     age: 24,
+        //     dept: "FSD",
+
+        // }
+        // for in ---for(let c in brand){}
+        // for (let can in brand) {
+        //     console.log(`${can}:${brand[can]}`);
+        // }
+
+
+        // bank{name,balance,deposit,withdraw}
+        // let At = parseInt(prompt("enter the withdrawal amount"))
+        // const bank = {
+        //     name: "Tamil",
+        //     balance: 52138,
+        //     deposit: "none",
+        //     withdrawal: function () {
+        //         if (At >= 10000) {
+        //             console.log("enter the amount within",bank.balance);
+        //         }
+        //         else if (At < 500) {
+        //             console.log("enter the amount over 500 ");
+        //         }
+        //         else if (At < 10000) {
+        //             console.log("apporved");
+        //         }
+        //     }
+        // }      
+        // console.log(bank.withdrawal())
+
+        //array of object
+        const student = [
+            {
+                name: "arun",
+                age: 23999,
+                dept: "FSD",
+                email: "arun@gmail.com"
+            },
+            {
+                name: "bala",
+                rollno: 24000,
+                dept: "DM",
+                email: "bala@gmail.com"
+            },
+            {
+                name: "gokul",
+                rollno: 24001,
+                dept: "FSD",
+                email: "gokul@gmail.com"
+            },
+            {
+                name: "arul",
+                rollno: 24002,
+                dept: "FSD",
+                email: "aruul@gmail.com"
+            }
+        ]
+        for (let i = 1; i < student.length; i++) {
+            console.log(student[i].name);
+        }
+        
+
+
+
+    </script>
+</body>
+
+</html>
