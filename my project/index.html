@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AW Dungeon</title>
+    <style>
+        body {
+            background: radial-gradient(#4c4c4c 4%, #3d3d3d 9%, rgba(61, 61, 61, 0) 9%) 0 0, radial-gradient(#4c4c4c 4%, #3d3d3d 8%, rgba(61, 61, 61, 0) 10%) 50px 50px, radial-gradient(rgba(76, 76, 76, 0.8) 20%, rgba(61, 61, 61, 0)) 50px 0, radial-gradient(rgba(76, 76, 76, 0.8) 20%, rgba(61, 61, 61, 0)) 0 50px, radial-gradient(#3d3d3d 35%, rgba(61, 61, 61, 0) 60%) 50px 0, radial-gradient(#3d3d3d 35%, rgba(61, 61, 61, 0) 60%) 100px 50px, radial-gradient(rgba(53, 53, 53, 0.7), rgba(61, 61, 61, 0)) 0 0, radial-gradient(rgba(53, 53, 53, 0.7), rgba(61, 61, 61, 0)) 50px 50px, linear-gradient(45deg, rgba(61, 61, 61, 0) 49%, black 50%, rgba(61, 61, 61, 0) 70%) 0 0, linear-gradient(-45deg, rgba(61, 61, 61, 0) 49%, black 50%, rgba(61, 61, 61, 0) 70%) 0 0;
+            background-color: #3d3d3d;
+            background-size: 100px 100px;
+        }
+
+
+        h1,
+        p {
+            text-shadow: black 5px 5px 5px;
+            color: wheat;
+            width: fit-content;
+            border-radius: 10px;
+        }
+
+     
+        .navigation-card {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            background-color: rgb(27, 103, 6);
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            background-color: rgb(27, 103, 6);
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background-color: rgb(227, 223, 223);
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background-color: #006aff;
+            border: 8px solid #c0dfff;
+            color: white;
+            gap: 8px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .text {
+            font-size: 1.7em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .svg {
+            padding-top: 5px;
+            height: 100%;
+            width: fit-content;
+        }
+
+        .svg svg {
+            width: 50px;
+            height: 30px;
+        }
+
+        .button:hover {
+            border: 8px solid #b1d8ff;
+            background-color: #1b7aff;
+        }
+
+        .button:active {
+            border: 5px solid #c0dfff;
+        }
+
+        .button:hover .svg svg {
+            animation: jello-vertical 0.9s both;
+            transform-origin: left;
+        }
+
+        .gameon {
+            position: relative;
+            height: 50px;
+            padding: 0 30px;
+            border: 2px solid #000;
+            background: #e8e8e8;
+            user-select: none;
+            white-space: nowrap;
+            transition: all .05s linear;
+            font-family: inherit;
+        }
+
+        .gameon:before,
+        button:after {
+            content: "";
+            position: absolute;
+            background: #e8e8e8;
+            transition: all .2s linear;
+        }
+
+        .gameon:before {
+            width: calc(100% + 6px);
+            height: calc(100% - 16px);
+            top: 8px;
+            left: -3px;
+        }
+
+        .gameon:after {
+            width: calc(100% - 16px);
+            height: calc(100% + 6px);
+            top: -3px;
+            left: 8px;
+        }
+
+        .gameon:hover {
+            cursor: crosshair;
+        }
+
+        .gameon:active {
+            transform: scale(0.95);
+        }
+
+        .gameon:hover:before {
+            height: calc(100% - 32px);
+            top: 16px;
+        }
+
+        .gameon:hover:after {
+            width: calc(100% - 32px);
+            left: 16px;
+        }
+
+        .gameon span {
+            font-size: 15px;
+            z-index: 3;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .configure-border-1 {
+            width: 50px;
+            height: 50px;
+            padding: 3px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fb5b53;
+            animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+        }
+
+        .configure-border-2 {
+            width: 50px;
+            height: 50px;
+            padding: 3px;
+            left: -50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(63, 249, 220);
+            transform: rotate(45deg);
+            animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+        }
+
+        .configure-core {
+            width: 100%;
+            height: 100%;
+            background-color: #1d2630;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .arrs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(7, 17, 4, 0.708);
+            color: whitesmoke;
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+
+        @keyframes configure-clockwise {
+            0% {
+                transform: rotate(0);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(270deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes configure-xclockwise {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            25% {
+                transform: rotate(-45deg);
+            }
+
+            50% {
+                transform: rotate(-135deg);
+            }
+
+            75% {
+                transform: rotate(-225deg);
+            }
+
+            100% {
+                transform: rotate(-315deg);
+            }
+        }
+
+        @keyframes jello-vertical {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            40% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            50% {
+                transform: scale3d(0.85, 1.15, 1);
+            }
+
+            65% {
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            75% {
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @media (oeientation: portrait) {
+            body {
+                size-adjust: cover;
+            }
+
+            .box {
+                background-color: whitesmoke;
+                color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar fixed-top">
+            <div class="navigation-card">
+                <div class="spinner-box">
+                    <div class="configure-border-1">
+                        <div class="configure-core"></div>
+                    </div>
+                    <div class="configure-border-2">
+                        <div class="configure-core">AW</div>
+                    </div>
+                </div>
+                <a href="index.html" class="tab">
+                    <svg class="svgIcon" viewBox="0 0 104 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100.5 40.75V96.5H66V68.5V65H62.5H43H39.5V68.5V96.5H3.5V40.75L52 4.375L100.5 40.75Z"
+                            stroke="black" stroke-width="7"></path>
+                    </svg>
+                </a>
+
+                <a href="about us.html" class="tab">
+                    <svg width="104" height="100" viewBox="0 0 104 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="21.5" y="3.5" width="60" height="60" rx="30" stroke="black" stroke-width="7"></rect>
+                        <g clip-path="url(#clip0_41_27)">
+                            <mask id="mask0_41_27" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="61"
+                                width="104" height="52">
+                                <path d="M0 113C0 84.2812 23.4071 61 52.1259 61C80.706 61 104 84.4199 104 113H0Z"
+                                    fill="white"></path>
+                            </mask>
+                            <g mask="url(#mask0_41_27)">
+                                <path
+                                    d="M-7 113C-7 80.4152 19.4152 54 52 54H52.2512C84.6973 54 111 80.3027 111 112.749H97C97 88.0347 76.9653 68 52.2512 68H52C27.1472 68 7 88.1472 7 113H-7ZM-7 113C-7 80.4152 19.4152 54 52 54V68C27.1472 68 7 88.1472 7 113H-7ZM52.2512 54C84.6973 54 111 80.3027 111 112.749V113H97V112.749C97 88.0347 76.9653 68 52.2512 68V54Z"
+                                    fill="black"></path>
+                            </g>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_41_27">
+                                <rect width="104" height="39" fill="white" transform="translate(0 61)"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+                <button class="gameon">
+                    <span><a href="/my project/boot/aw1.html"> GAME ON
+                    </span>
+                </button>
+            </div>
+        </div>
+
+    </header>
+    <main class="box">
+        <h1 class="heads">About the AW Dungeon</h1>
+        <div class="gameinfo">
+            <p>it a game about entering the dungeon with minimum 100 floors
+                A dungeon is a dark, underground prison or cell, usually in a castle. Dungeons are often associated
+                with medieval castles, but their association with torture may come from the Renaissance period.
+                The word dungeon, meaning “a dark usually underground prison,”
+                comes from the French word donjon, which
+                also gives us our English word donjon, meaning “an inner tower in a castle.”Dungeon was first used in
+                English
+                in the 14th century for the strong tower in the inner part of the castle.
+            </p>
+
+            <img class="vid" src="/my project/image/characters chart.jpg" alt="character chart">
+            <p class="uni">
+                A "character unique in a game" refers to a playable character
+                within a video game that stands out
+                significantly
+                from other characters due to their distinct appearance, abilities, personality, backstory, or gameplay
+                mechanics, essentially making them a unique and memorable part of the game experience.
+            </p>
+        </div>
+<div class="arrs">
+        <button class="button"><a href="/my project/more about monster.html" style="text-decoration: none;">
+                <span class="text">Monsters</span>
+                <span class="svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 38 15" fill="none">
+                        <path fill="white"
+                            d="M10 7.519l-.939-.344h0l.939.344zm14.386-1.205l-.981-.192.981.192zm1.276 5.509l.537.843.148-.094.107-.139-.792-.611zm4.819-4.304l-.385-.923h0l.385.923zm7.227.707a1 1 0 0 0 0-1.414L31.343.448a1 1 0 0 0-1.414 0 1 1 0 0 0 0 1.414l5.657 5.657-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364zM1 7.519l.554.833.029-.019.094-.061.361-.23 1.277-.77c1.054-.609 2.397-1.32 3.629-1.787.617-.234 1.17-.392 1.623-.455.477-.066.707-.008.788.034.025.013.031.021.039.034a.56.56 0 0 1 .058.235c.029.327-.047.906-.39 1.842l1.878.689c.383-1.044.571-1.949.505-2.705-.072-.815-.45-1.493-1.16-1.865-.627-.329-1.358-.332-1.993-.244-.659.092-1.367.305-2.056.566-1.381.523-2.833 1.297-3.921 1.925l-1.341.808-.385.245-.104.068-.028.018c-.011.007-.011.007.543.84zm8.061-.344c-.198.54-.328 1.038-.36 1.484-.032.441.024.94.325 1.364.319.45.786.64 1.21.697.403.054.824-.001 1.21-.09.775-.179 1.694-.566 2.633-1.014l3.023-1.554c2.115-1.122 4.107-2.168 5.476-2.524.329-.086.573-.117.742-.115s.195.038.161.014c-.15-.105.085-.139-.076.685l1.963.384c.192-.98.152-2.083-.74-2.707-.405-.283-.868-.37-1.28-.376s-.849.069-1.274.179c-1.65.43-3.888 1.621-5.909 2.693l-2.948 1.517c-.92.439-1.673.743-2.221.87-.276.064-.429.065-.492.057-.043-.006.066.003.155.127.07.099.024.131.038-.063.014-.187.078-.49.243-.94l-1.878-.689zm14.343-1.053c-.361 1.844-.474 3.185-.413 4.161.059.95.294 1.72.811 2.215.567.544 1.242.546 1.664.459a2.34 2.34 0 0 0 .502-.167l.15-.076.049-.028.018-.011c.013-.008.013-.008-.524-.852l-.536-.844.019-.012c-.038.018-.064.027-.084.032-.037.008.053-.013.125.056.021.02-.151-.135-.198-.895-.046-.734.034-1.887.38-3.652l-1.963-.384zm2.257 5.701l.791.611.024-.031.08-.101.311-.377 1.093-1.213c.922-.954 2.005-1.894 2.904-2.27l-.771-1.846c-1.31.547-2.637 1.758-3.572 2.725l-1.184 1.314-.341.414-.093.117-.025.032c-.01.013-.01.013.781.624zm5.204-3.381c.989-.413 1.791-.42 2.697-.307.871.108 2.083.385 3.437.385v-2c-1.197 0-2.041-.226-3.19-.369-1.114-.139-2.297-.146-3.715.447l.771 1.846z">
+                        </path>
+                    </svg>
+                </span>
+            </a>
+        </button>
+        <button class="button" onclick="handleDonation()">
+            <span class="text">Donate</span>
+            <span class="svg">
+                💖
+            </span>
+        </button>
+
+        <!-- 🛒 Pre-order Button -->
+        <button class="button" onclick="handlePreOrder()">
+            <span class="text">Pre-order</span>
+            <span class="svg">
+                🛒
+            </span>
+        </button></div>
+    </main>
+    <footer>
+        created by Jithesh h <br>
+        Using unreal engine <br>
+        &copy;2023<br>
+
+    </footer>
+   
+        <script>
+            
+
+            function handlePreOrder() {
+    const confirmOrder = confirm("Pre-order AW Dungeon now?");
+            if (confirmOrder) {
+                window.location.href = "/my project/checkout.html"; // Change to your preorder page
+    }
+  }
+    </script>
+
+</body>
+
+</html>
