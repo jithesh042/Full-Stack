@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #1d2630;
+        }
+
+        .navbar {
+            width: 1500px;
+            height: auto;
+            display: flex;
+            position: fixed;
+            top: 0px;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            background-color: rgb(27, 103, 6);
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            background-color: rgb(27, 103, 6);
+            padding: 15px;
+            border-radius: 50%;
+            cursor: help;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .monster {
+            margin-top: 100px;
+        }
+
+        .tab:hover {
+            background-color: rgb(227, 223, 223);
+        }
+
+        h1 {
+            background-color: ghostwhite;
+        }
+
+        h3 {
+            color: sandybrown;
+            text-shadow: black 5px 5px 5px;
+        }
+
+
+        p {
+            width: 70%;
+            float: right;
+            margin-right: 50px;
+            color: wheat;
+            text-shadow: black 5px 5px 5px;
+        }
+
+        .configure-border-1 {
+            width: 50px;
+            height: 50px;
+            padding: 3px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fb5b53;
+            animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+        }
+
+        .configure-border-2 {
+            width: 50px;
+            height: 50px;
+            padding: 3px;
+            left: -50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(63, 249, 220);
+            transform: rotate(45deg);
+            animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+        }
+
+        .configure-core {
+            width: 100%;
+            height: 100%;
+            background-color: #1d2630;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+
+        #suggestBtn {
+            background-color: #f39c12;
+            /* Golden color */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        #suggestBtn:hover {
+            background-color: #e67e22;
+            /* Darker shade on hover */
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+            /* Glow effect */
+            cursor: pointer;
+        }
+
+        #suggestBtn:disabled {
+            background-color: #bdc3c7;
+            /* Greyed out button */
+            cursor: not-allowed;
+        }
+
+        /* From Uiverse.io by Cevorob */
+        .gameon {
+            position: relative;
+            height: 50px;
+            padding: 0 30px;
+            border: 2px solid #000;
+            background: #e8e8e8;
+            user-select: none;
+            white-space: nowrap;
+            transition: all .05s linear;
+            font-family: inherit;
+        }
+
+        .gameon:before,
+        button:after {
+            content: "";
+            position: absolute;
+            background: #e8e8e8;
+            transition: all .2s linear;
+        }
+
+        .gameon:before {
+            width: calc(100% + 6px);
+            height: calc(100% - 16px);
+            top: 8px;
+            left: -3px;
+        }
+
+        .gameon:after {
+            width: calc(100% - 16px);
+            height: calc(100% + 6px);
+            top: -3px;
+            left: 8px;
+        }
+
+        .gameon:hover {
+            cursor: crosshair;
+        }
+
+        .gameon:active {
+            transform: scale(0.95);
+        }
+
+        .gameon:hover:before {
+            height: calc(100% - 32px);
+            top: 16px;
+        }
+
+        .gameon:hover:after {
+            width: calc(100% - 32px);
+            left: 16px;
+        }
+
+        .gameon span {
+            font-size: 15px;
+            z-index: 3;
+            position: relative;
+            font-weight: 600;
+        }
+
+        @keyframes configure-clockwise {
+            0% {
+                transform: rotate(0);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(270deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes configure-xclockwise {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            25% {
+                transform: rotate(-45deg);
+            }
+
+            50% {
+                transform: rotate(-135deg);
+            }
+
+            75% {
+                transform: rotate(-225deg);
+            }
+
+            100% {
+                transform: rotate(-315deg);
+            }
+        }
+
+        @media (oeientation: portrait) {
+            .box {
+                background-color: wheat;
+                color: black;
+                size-adjust: cover;
+                background-size: contain;
+            }
+
+            body {
+                size-adjust: cover;
+                background-size: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="fixed-top">
+            <div class="navbar">
+                <div class="spinner-box">
+                    <div class="configure-border-1">
+                        <div class="configure-core"></div>
+                    </div>
+                    <div class="configure-border-2">
+                        <div class="configure-core">AW</div>
+
+                    </div>
+                </div>
+                <a href="index.html" class="tab">
+                    <svg class="svgIcon" viewBox="0 0 104 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100.5 40.75V96.5H66V68.5V65H62.5H43H39.5V68.5V96.5H3.5V40.75L52 4.375L100.5 40.75Z"
+                            stroke="black" stroke-width="7"></path>
+                    </svg>
+                </a>
+
+                <a href="about us.html" class="tab">
+                    <svg width="104" height="100" viewBox="0 0 104 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="21.5" y="3.5" width="60" height="60" rx="30" stroke="black" stroke-width="7"></rect>
+                        <g clip-path="url(#clip0_41_27)">
+                            <mask id="mask0_41_27" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="61"
+                                width="104" height="52">
+                                <path d="M0 113C0 84.2812 23.4071 61 52.1259 61C80.706 61 104 84.4199 104 113H0Z"
+                                    fill="white"></path>
+                            </mask>
+                            <g mask="url(#mask0_41_27)">
+                                <path
+                                    d="M-7 113C-7 80.4152 19.4152 54 52 54H52.2512C84.6973 54 111 80.3027 111 112.749H97C97 88.0347 76.9653 68 52.2512 68H52C27.1472 68 7 88.1472 7 113H-7ZM-7 113C-7 80.4152 19.4152 54 52 54V68C27.1472 68 7 88.1472 7 113H-7ZM52.2512 54C84.6973 54 111 80.3027 111 112.749V113H97V112.749C97 88.0347 76.9653 68 52.2512 68V54Z"
+                                    fill="black"></path>
+                            </g>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_41_27">
+                                <rect width="104" height="39" fill="white" transform="translate(0 61)"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+
+                <!-- <button class="gameon">
+                    <span><a href="/my project/boot/aw1.html"> GAME ON
+                    </span> -->
+                </button>
+            </div>
+        </div>
+
+
+    </header>
+    <main>
+        <div class="monster">
+            <div class="text-center my-4">
+                <!-- Search Bar for Monster Search -->
+                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search for a monster..." />
+                <button id="searchBtn" class="btn btn-primary">Search</button>
+            </div>
+
+            <div id="monster-container" class="container text-center text-white"></div>
+
+            <div class="text-center my-4">
+                <button id="prevBtn" class="btn btn-light mx-2">Previous</button>
+                <button id="nextBtn" class="btn btn-light mx-2">Next</button>
+            </div>
+            <!-- Suggest Monster Button -->
+            <button id="suggestBtn" class="btn btn-warning mx-2">Suggest a Monster</button>
+
+            <!-- Suggestion Form (hidden by default) -->
+            <div id="suggestForm" class="container mt-4 text-white" style="display: none;">
+                <h4>Suggest a New Monster</h4>
+                <div class="mb-3">
+                    <label for="monsterName" class="form-label">Monster Name</label>
+                    <input type="text" class="form-control" id="monsterName" placeholder="e.g. Chimera">
+                </div>
+                <div class="mb-3">
+                    <label for="monsterImage" class="form-label">Image URL or 3D Model Link</label>
+                    <input type="text" class="form-control" id="monsterImage"
+                        placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="mb-3">
+                    <label for="monsterDescription" class="form-label">Monster Description</label>
+                    <textarea class="form-control" id="monsterDescription" rows="3"
+                        placeholder="Describe the monster..."></textarea>
+                </div>
+                <button id="submitSuggestion" class="btn btn-primary">Submit Suggestion</button>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        let info = [
+            {
+                "name": "Goblin ",
+                "description": "A goblin is a small, grotesque, monstrous humanoid creature that appears in the folklore of multiple European cultures. First attested in stories from the Middle Ages, they are ascribed conflicting abilities, temperaments, and appearances depending on the story and country of origin, ranging from mischievous household spirits to malicious, bestial thieves.",
+                "image": "url(/my project/image/goblins-for-the-goblin-slayer-mod-v0-ezvp0eqb6rqa1.webp)"
+            },
+            {
+                "name": "Wolf ",
+                "description": "The wolf monster is a fearsome creature with glowing red eyes and razor-sharp fangs. Standing on its hind legs, it towers over its prey, exuding a menacing aura. Its fur is thick and matted, dark as the night,providing camouflage in the wilderness. It possesses supernatural strength and agility, making it a formidable adversary. Often found howling at the moon, the wolf monster strikes terror into the hearts of those who encounter it.",
+                "image": "url(/my project/image/wolves_by_michalivan_d2pxlss-fullview.jpg)"
+            },
+            {
+                "name": "Zombie ",
+                "description": "The zombie monster is a grotesque and decaying creature that roams the night in search of its next victim. Its skin is rotting and peeling, revealing bones and sinew beneath. With hollow, lifeless eyes and an unending hunger for human flesh, it shuffles and moans in a relentless pursuit. Possessing unnatural strength, it can tear through barriers with ease. The mere sight of a zombie monster strikes terror into the hearts of the living.",
+                "image": "url(/my project/image/0e3130aece144c0599f6bcf7370940a5.jpg)"
+            },
+            {
+                "name": "skeleton ",
+                "description": "The skeleton monster is a ghastly apparition composed entirely of bones, clattering and creaking as it moves. Its empty eye sockets glow with an eerie light, and it wields ancient, rusted weapons. Animated by dark magic, it is relentless and unyielding in battle. Cloaked in tattered remnants of its former self, it emanates a chilling aura. The sight of a skeleton monster sends shivers down the spine of even the bravest souls.",
+                "image": "url(/my project/image/Skeletons.webp)"
+            },
+            {
+                "name": "Slimes ",
+                "description": "The slime monster is an amorphous, gelatinous creature that oozes and slithers through dark and damp environments. Its translucent, gooey body can engulf and digest anything it touches. Despite its seemingly slow movement, it can rapidly change shape and size to ensnare its prey. The slime monster emits a foul, acidic stench, adding to its repulsive nature. Encountering this creature is a nightmarish experience for anyone unfortunate enough to cross its path.",
+                "image": "url(/my project/image/slime-monsters-fantastic-jelly-stain-260nw-2363062251.webp)"
+            },
+            {
+                "name": "Vampire ",
+                "description": "The vampire monster is a sinister and alluring creature of the night, known for its pale skin, sharp fangs, and hypnotic gaze. It preys on the blood of the living, often seducing its victims before striking. With supernatural speed and strength, it can evade capture and vanish into the shadows. The vampire's immortality is both a curse and a blessing, as it wanders the earth in search of eternal life through the lifeblood of others.",
+                "image": "url(/my project/image/vampire.jpg)"
+            },
+            {
+                "name": "Mummy",
+                "description": "The mummy monster is a reanimated corpse, wrapped in tattered bandages and steeped in ancient curses. It emerges from its tomb, driven by a relentless desire for revenge or to protect its secrets. With a slow, shuffling gait, it can unleash powerful curses and wield dark magic. The sight of a mummy monster sends chills down the spine, as it embodies the horrors of the past and the mysteries of the afterlife.",
+                "image": "url(/my project/image/mummy.jpg)"
+            },
+            {
+                "name": "Giant",
+                "description": "The giant monster is a colossal being, towering over landscapes and instilling fear in all who behold it. With immense strength and size, it can crush anything in its path. Its skin is often rugged and weathered, resembling the earth itself. Despite its intimidating presence, the giant may possess a gentle heart or a fierce temper, depending on the tale. Encountering a giant monster is both awe-inspiring and terrifying.",
+                "image": "url(/my project/image/giant.jpg)"
+            },
+            {
+                "name": "minotaur",
+                "description": "The Minotaur is a fascinating figure from Greek mythology. This legendary creature is described as having the body of a man and the head of a bull. According to myth, the Minotaur was born to Pasiphaë, the wife of King Minos of Crete, and a majestic bull sent by the god Poseidon.",
+                "image": "url(/my project/image/minotaur.jpg)"
+            },
+            {
+                "name": "Dragon",
+                "description": "The dragon monster is a legendary creature, often depicted as a massive, fire-breathing reptile with scales and wings. It embodies power and majesty, soaring through the skies with grace. With sharp claws and a long tail, it can unleash devastating attacks. The dragon is often associated with treasure hoarding and ancient wisdom, making it both feared and revered in folklore.",
+                "image": "url(/my project/image/dragon.webp)"
+            },
+            {
+                "name": "Hydra",
+                "description": "The hydra is a serpentine water monster with multiple heads. When one head is cut off, two more grow in its place. Dwelling in swamps and lakes, the hydra strikes fear into anyone who dares to approach. Its venomous bite and regenerative abilities make it nearly impossible to defeat without cunning and fire.",
+                "image": "url(/my project/image/hydra.jpg)"
+            },
+            {
+                "name": "Griffin",
+                "description": "The griffin is a majestic beast with the body of a lion and the head and wings of an eagle. Known as a guardian of treasure and sacred sites, it combines the strength of a lion with the keen eyesight and flight of an eagle. Proud and noble, the griffin represents power and protection.",
+                "image": "url(/my project/image/Griffin.webp)"
+            },
+            {
+                "name": "Basilisk",
+                "description": "The basilisk is a deadly creature often depicted as a serpent or lizard with the power to kill with a single glance. It leaves a trail of death and decay wherever it slithers. Legends say it can be defeated only by the crow of a rooster or seeing its own reflection.",
+                "image": "url(/my project/image/Basilisk.png)"
+            },
+            {
+                "name": "Kraken",
+                "description": "The kraken is a legendary sea monster of enormous size, said to dwell off the coasts and drag ships beneath the waves with its massive tentacles. Sailors fear the kraken for its strength and the whirlpools it leaves in its wake. It is the terror of the deep ocean.",
+                "image": "url(/my project/image/Kraken.avif)"
+            },
+            {
+                "name": "Banshee",
+                "description": "The banshee is a ghostly woman from Celtic folklore who wails to foretell death. Cloaked in tattered robes, her piercing cry chills the soul. She often appears near dark forests or old ruins, floating just above the ground as a harbinger of doom.",
+                "image": "url(/my project/image/Banshee.webp)"
+            },            
+            {
+                "name": "Wendigo",
+                "description": "The Wendigo is a terrifying spirit from Algonquian folklore, often associated with cannibalism and insatiable hunger. Emaciated with icy, pale skin and glowing eyes, it roams the frozen wilderness hunting for flesh. Its eerie cries echo through the forest, chilling the blood of anyone who hears them.",
+                "image": "url(/my project/image/Wendigo.jpg)"
+            },
+            {
+                "name": "Chimera",
+                "description": "The Chimera is a monstrous hybrid creature from Greek mythology, with the body of a lion, the head of a goat protruding from its back, and a serpent for a tail. It breathes fire and is nearly impossible to slay, a true symbol of chaos and fear.",
+                "image": "url(/my project/image/chimera.jpg)"
+            },
+            {
+                "name": "Dullahan",
+                "description": "The Dullahan is a headless horseman from Irish legend, carrying his own head under one arm. He rides a black horse and uses a whip made from a human spine. When he stops riding, someone dies, as he calls out the name of his next victim.",
+                "image": "url(/my project/image/Dullahan.jpg)"
+            },
+            {
+                "name": "Beholder",
+                "description": "The Beholder is a floating orb of flesh with a single central eye and many eyestalks, each capable of casting deadly magical rays. It is extremely intelligent and paranoid, often lurking in deep caverns where it rules over lesser creatures.",
+                "image": "url(/my project/image/Beholder.webp)"
+            },
+            {
+                "name": "Lich",
+                "description": "The Lich is an undead sorcerer who has achieved immortality through dark rituals and phylacteries. With skeletal features and immense magical power, it commands legions of undead and plots from the shadows, seeking to conquer or destroy the living.",
+                "image": "url(/my project/image/Lich.jpg)"
+            },
+            {
+                "name": "Gorgon",
+                "description": "A Gorgon is a fearsome creature with snakes for hair and a gaze that can turn anyone to stone. Based on Greek mythology, the most famous Gorgon is Medusa. Gorgons are often depicted with monstrous features and a paralyzing presence.",
+                "image": "url(/my project/image/Gorgon.jpeg)"
+            },
+            {
+                "name": "Nagini",
+                "description": "Nagini is a mythical serpent creature found in South and Southeast Asian folklore. Sometimes divine, sometimes demonic, this shape-shifting serpent can take human form and is often tied to ancient temples and sacred waters.",
+                "image": "url(/my project/image/Nagini.webp)"
+            },
+            {
+                "name": "Ghoul",
+                "description": "Ghouls are grave-robbing undead creatures that haunt cemeteries and feast on human flesh. Agile and predatory, they emerge at night to prey on the living and the dead alike. Their twisted forms are gaunt, pale, and horrifying to behold.",
+                "image": "url(/my project/image/Ghoul.jpg)"
+            },
+            {
+                "name": "Kelpie",
+                "description": "The Kelpie is a shape-shifting water spirit from Scottish folklore, usually appearing as a horse. It lures travelers to ride it before dragging them into the water to drown. Beneath its alluring exterior lies a dark and deadly intent.",
+                "image": "url(/my project/image/Kelpie.jpg)"
+            },
+            {
+                "name": "Succubus",
+                "description": "The Succubus is a demon that takes the form of a beautiful woman to seduce and drain the life force of her victims. Often appearing in dreams, she uses allure and manipulation as her weapons, feeding on desire and fear.",
+                "image": "url(/my project/image/Succubus.jpg)"
+            },
+            {
+                "name": "Treant",
+                "description": "The Treant is a sentient tree-like creature that guards ancient forests. Towering and slow-moving, it possesses immense strength and wisdom. When roused to anger, it can uproot itself to punish those who threaten nature.",
+                "image": "url(/my project/image/Treant.jpg)"
+            },
+
+            {
+                "name": "Nuckelavee",
+                "description": "The Nuckelavee is a horrifying sea-dwelling demon from Orcadian mythology. It has the body of a horse fused with a rider, but no skin—exposing raw muscle and black blood. It brings plague and death wherever it goes.",
+                "image": "url(/my project/image/Nuckelavee.jpg)"
+            },
+            {
+                "name": "Jorōgumo",
+                "description": "The Jorōgumo is a spider demon from Japanese folklore that can take the form of a beautiful woman. She lures unsuspecting men into her lair before revealing her monstrous nature and devouring them. Her web is both physical and metaphorical.",
+                "image": "url(/my project/image/Jorōgumo.webp)"
+            },
+            {
+                "name": "Mimic",
+                "description": "The Mimic is a deceptive creature that disguises itself as inanimate objects—most famously, treasure chests. When a victim approaches, it reveals its gaping maw and sticky tendrils, ready to ambush and consume its prey.",
+                "image": "url(/my project/image/mimic.png)"
+            },
+            {
+                "name": "Yeti",
+                "description": "The Yeti, or Abominable Snowman, is a towering humanoid creature said to inhabit the snowy Himalayas. Covered in thick white fur and rarely seen, it is a mysterious guardian of the mountains with immense strength and chilling roars.",
+                "image": "url(/my project/image/Yeti.png)"
+            }
+
+        ]
+        let currentPage = 1;
+        const itemsPerPage = 5;
+
+        function displayMonsters(page) {
+            const container = document.getElementById('monster-container');
+            container.innerHTML = '';
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const monstersToShow = info.slice(start, end);
+
+            monstersToShow.forEach(monster => {
+                const imageUrl = monster.image.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+                const monsterCard = document.createElement('div');
+                monsterCard.className = 'row my-4 p-3 border border-light rounded bg-dark';
+                monsterCard.innerHTML = `
+            <h3 class="text-warning text-shadow mb-3">${monster.name}</h3>
+          <img src="${imageUrl}" alt="${monster.name}" class="img-fluid rounded mb-3" style="height: 300px; object-fit: contain;" />
+            <p class="text-light">${monster.description}</p>
+        `;
+
+                container.appendChild(monsterCard);
+            });
+        }
+
+        function updateButtons() {
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage * itemsPerPage >= info.length;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayMonsters(currentPage);
+                updateButtons();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if ((currentPage * itemsPerPage) < info.length) {
+                currentPage++;
+                displayMonsters(currentPage);
+                updateButtons();
+            }
+        });
+
+        displayMonsters(currentPage);
+        updateButtons();
+        // Toggle suggestion form
+        document.getElementById('suggestBtn').addEventListener('click', () => {
+            const form = document.getElementById('suggestForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Handle form submission
+        document.getElementById('submitSuggestion').addEventListener('click', () => {
+            const name = document.getElementById('monsterName').value.trim();
+            const image = document.getElementById('monsterImage').value.trim();
+            const description = document.getElementById('monsterDescription').value.trim();
+
+            if (name && image && description) {
+                const newMonster = {
+                    name,
+                    image: `url(${image})`,
+                    description
+                };
+                info.push(newMonster);
+                alert('Thank you! Your monster suggestion has been added locally.');
+
+                // Optionally clear and hide form
+                document.getElementById('monsterName').value = '';
+                document.getElementById('monsterImage').value = '';
+                document.getElementById('monsterDescription').value = '';
+                document.getElementById('suggestForm').style.display = 'none';
+
+                // Reload last page
+                displayMonsters(currentPage);
+                updateButtons();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+        // Add search functionality
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (searchQuery) {
+                const filteredMonsters = info.filter(monster => monster.name.toLowerCase().includes(searchQuery));
+                displayMonstersWithFilter(filteredMonsters);
+            } else {
+                displayMonsters(currentPage); // If search is empty, show the original list
+            }
+        });
+
+        // Display the filtered monsters
+        function displayMonstersWithFilter(monsters) {
+            const container = document.getElementById('monster-container');
+            container.innerHTML = ''; // Clear current content
+
+            monsters.forEach(monster => {
+                const imageUrl = monster.image.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+                const monsterCard = document.createElement('div');
+                monsterCard.className = 'row my-4 p-3 border border-light rounded bg-dark';
+                monsterCard.innerHTML = `
+            <h3 class="text-warning text-shadow mb-3">${monster.name}</h3>
+            <img src="${imageUrl}" alt="${monster.name}" class="img-fluid rounded mb-3" style="height: 300px; object-fit: contain;" />
+            <p class="text-light">${monster.description}</p>
+        `;
+
+                container.appendChild(monsterCard);
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
